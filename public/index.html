@@ -34,7 +34,7 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-inner" style="display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center">
+      <div class="container hero-inner hero-grid">
         <div>
           <h1>Ship AI faster on a decentralized inference network</h1>
           <p class="lead">OpenAI-compatible API. Dynamic routing to the fastest GPU nodes. Bring your own models. Pay less, scale more.</p>
@@ -49,8 +49,39 @@
             <span>Node rewards</span>
           </div>
         </div>
-        <div aria-hidden="true" style="display:flex;justify-content:center;align-items:center;z-index:1">
+        <div aria-hidden="true" class="hero-graphic-wrap">
           <img src="/assets/hero-graphic.svg" alt="" width="560" height="400" style="max-width:100%;height:auto;filter:drop-shadow(0 10px 18px rgba(43,95,232,.12))" />
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <h2 class="center">How ModelCloud works</h2>
+        <div class="how-grid">
+          <div class="how-step">
+            <div class="how-icon">1</div>
+            <h3>Client request</h3>
+            <p>Your app sends <strong>/v1/chat/completions</strong> with model and messages.</p>
+          </div>
+          <div class="how-arrow" aria-hidden="true">→</div>
+          <div class="how-step">
+            <div class="how-icon">2</div>
+            <h3>Smart router</h3>
+            <p>Router selects the fastest healthy node by latency and availability.</p>
+          </div>
+          <div class="how-arrow" aria-hidden="true">→</div>
+          <div class="how-step">
+            <div class="how-icon">3</div>
+            <h3>Node inference</h3>
+            <p>GPU node runs the model locally (e.g. llama.cpp) and streams output.</p>
+          </div>
+          <div class="how-arrow" aria-hidden="true">→</div>
+          <div class="how-step">
+            <div class="how-icon">4</div>
+            <h3>Response</h3>
+            <p>You receive the completion—fast, reliable, and cost‑efficient.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -68,12 +99,13 @@
             <li>Model catalog and BYO model support</li>
           </ul>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#get-started">Get API Key</a>
+            <a class="btn btn-primary" href="/docs/quickstart/">Get API Key</a>
             <a class="btn btn-ghost" href="/docs/quickstart/">Quickstart</a>
           </div>
         </div>
-        <pre class="code">
-curl https://api.modelcloud.example.com/v1/chat/completions \
+        <div class="code-wrap">
+          <button class="copy-btn" data-copy-target="#curl-example" aria-label="Copy code">Copy</button>
+          <pre class="code"><code id="curl-example">curl https://api.modelcloud.example.com/v1/chat/completions \
   -H "Authorization: Bearer $MC_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -82,8 +114,8 @@ curl https://api.modelcloud.example.com/v1/chat/completions \
       { "role": "developer", "content": "You are a helpful assistant." },
       { "role": "user", "content": "Hello!" }
     ]
-  }'
-        </pre>
+  }'</code></pre>
+        </div>
       </div>
     </section>
 
@@ -100,8 +132,8 @@ curl https://api.modelcloud.example.com/v1/chat/completions \
             <li>Weekly payouts, clear dashboards</li>
           </ul>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#get-started-operator">Start running a node</a>
-            <a class="btn btn-ghost" href="#payouts">How payouts work</a>
+            <a class="btn btn-primary" href="/docs/nodes/run-a-node/">Start running a node</a>
+            <a class="btn btn-ghost" href="/docs/nodes/payouts/">How payouts work</a>
           </div>
         </div>
         <div>
@@ -111,6 +143,45 @@ curl https://api.modelcloud.example.com/v1/chat/completions \
             <li>Start the node agent and sync models</li>
             <li>Serve requests, earn rewards</li>
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section alt">
+      <div class="container">
+        <h2 class="center">Simple, usage‑based pricing</h2>
+        <p class="lead center">Pay for what you use. Earn for what you serve.</p>
+        <div class="pricing-grid">
+          <div class="plan">
+            <h3>Free</h3>
+            <div class="price">$0<span>/mo</span></div>
+            <ul class="bullets">
+              <li>1K requests/month</li>
+              <li>Community models</li>
+              <li>Email support</li>
+            </ul>
+            <a class="btn btn-ghost" href="/docs/quickstart/">Start free</a>
+          </div>
+          <div class="plan featured">
+            <h3>Developer</h3>
+            <div class="price">$0.20<span>/1K tokens</span></div>
+            <ul class="bullets">
+              <li>Priority routing</li>
+              <li>Streaming responses</li>
+              <li>Dashboard & metrics</li>
+            </ul>
+            <a class="btn btn-primary" href="/docs/quickstart/">Get API key</a>
+          </div>
+          <div class="plan">
+            <h3>Scale</h3>
+            <div class="price">Custom</div>
+            <ul class="bullets">
+              <li>SLA & dedicated support</li>
+              <li>Custom routing policies</li>
+              <li>Private model hosting</li>
+            </ul>
+            <a class="btn btn-ghost" href="/docs/">Contact us</a>
+          </div>
         </div>
       </div>
     </section>
@@ -148,7 +219,8 @@ curl https://api.modelcloud.example.com/v1/chat/completions \
     <div class="container footer-inner">
       <div class="brand">ModelCloud</div>
       <nav class="footer-links">
-        <a href="/blog/">Blog</a>
+        <a href="/docs/">Docs</a>
+        <a href="/docs/blog/">Blog</a>
         <a href="#security">Security</a>
         <a href="#terms">Terms</a>
         <a href="#privacy">Privacy</a>
