@@ -1,0 +1,47 @@
+site_name: ModelCloud Docs
+site_description: Developer documentation for ModelCloud – decentralized AI inference network
+site_url: https://docs.modelcloud.example.com/
+docs_dir: docs
+site_dir: public/docs
+repo_url: https://github.com/Model-Cloud
+theme:
+  name: material
+  logo: /assets/logo.svg
+  favicon: /assets/logo.svg
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - navigation.tabs
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+plugins:
+  - search
+  - blog
+  # - rss:
+  #     match_path: blog/posts/.*
+  #     date_from_meta:
+  #       as_creation: date
+  #     categories:
+  #       - categories
+  #       - tags
+nav:
+  - Overview: index.md
+  - Quickstart: quickstart.md
+  - API Reference:
+      - Chat Completions: api/chat-completions.md
+  - Blog:
+      - Overview: blog/index.md
