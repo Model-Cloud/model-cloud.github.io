@@ -1,8 +1,8 @@
 site_name: ModelCloud Docs
 site_description: Developer documentation for ModelCloud – decentralized AI inference network
-site_url: https://docs.modelcloud.example.com/
-docs_dir: docs
-site_dir: public/docs
+site_url: https://modelcloud.github.io/docs/
+docs_dir: mkdocs
+site_dir: docs/docs
 repo_url: https://github.com/Model-Cloud
 theme:
   name: material
