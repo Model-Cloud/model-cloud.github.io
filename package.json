@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "build": "echo Building static site && mkdocs build && cp -r public/* docs/",
-    "start": "npm run build && serve ./docs -l 5000"
+    "start": "npm run build && serve ./docs -l 5000",
+    "dev": "nodemon --watch mkdocs,public"
   },
   "devDependencies": {
     "serve": "^14.2.3"
