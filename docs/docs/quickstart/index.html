@@ -444,18 +444,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-stream-responses-optional" class="md-nav__link">
+  <a href="#3-run-a-node-prebuilt-binaries" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Stream responses (optional)
+      3. Run a node (prebuilt binaries)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-next-steps" class="md-nav__link">
+  <a href="#4-stream-responses-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Next steps
+      4. Stream responses (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Next steps
     </span>
   </a>
   
@@ -821,7 +830,7 @@
 
 
 <h1 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h1>
-<p>This guide helps you make your first request to ModelCloud.</p>
+<p>This guide helps you make your first request to ModelCloud and run a node.</p>
 <h2 id="1-get-an-api-key">1. Get an API Key<a class="headerlink" href="#1-get-an-api-key" title="Permanent link">&para;</a></h2>
 <p>Sign up and retrieve your API key from the Console.</p>
 <h2 id="2-make-a-chat-completion-request">2. Make a Chat Completion request<a class="headerlink" href="#2-make-a-chat-completion-request" title="Permanent link">&para;</a></h2>
@@ -837,9 +846,39 @@
 <span class="s1">  }&#39;</span>
 </code></pre></div>
 
-<h2 id="3-stream-responses-optional">3. Stream responses (optional)<a class="headerlink" href="#3-stream-responses-optional" title="Permanent link">&para;</a></h2>
+<h2 id="3-run-a-node-prebuilt-binaries">3. Run a node (prebuilt binaries)<a class="headerlink" href="#3-run-a-node-prebuilt-binaries" title="Permanent link">&para;</a></h2>
+<p>1) Download a prebuilt asset from the <a href="../downloads/">Downloads</a> page.</p>
+<p>2) Extract the archive and set environment variables.</p>
+<p>Linux/macOS:</p>
+<div class="codehilite"><pre><span></span><code>tar<span class="w"> </span>-xzf<span class="w"> </span>mc-node-&lt;os&gt;-&lt;arch&gt;.tar.gz
+<span class="nb">export</span><span class="w"> </span><span class="nv">MC_NODE_ID</span><span class="o">=</span><span class="s2">&quot;your-node-id&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MC_NODE_SECRET</span><span class="o">=</span><span class="s2">&quot;your-node-secret&quot;</span>
+<span class="c1"># Optional overrides</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MC_GRPC_URL</span><span class="o">=</span><span class="s2">&quot;localhost:9090&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MC_MODELS_DIR</span><span class="o">=</span><span class="s2">&quot;/tmp/mc-models&quot;</span>
+<span class="c1"># If llama-server is not in PATH</span>
+<span class="c1"># export MC_LLAMA_SERVER_BIN_PATH=&quot;/path/to/llama-server&quot;</span>
+./mc-node-&lt;os&gt;-&lt;arch&gt;
+</code></pre></div>
+
+<p>Windows (PowerShell):</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Expand-Archive</span> <span class="n">mc-node-windows</span><span class="p">-&lt;</span><span class="n">arch</span><span class="p">&gt;.</span><span class="n">zip</span>
+<span class="nv">$env:MC_NODE_ID</span><span class="p">=</span><span class="s2">&quot;your-node-id&quot;</span>
+<span class="nv">$env:MC_NODE_SECRET</span><span class="p">=</span><span class="s2">&quot;your-node-secret&quot;</span>
+<span class="nv">$env:MC_GRPC_URL</span><span class="p">=</span><span class="s2">&quot;localhost:9090&quot;</span>
+<span class="nv">$env:MC_MODELS_DIR</span><span class="p">=</span><span class="s2">&quot;C:\\mc-models&quot;</span>
+<span class="c"># If llama-server is not in PATH</span>
+<span class="c"># $env:MC_LLAMA_SERVER_BIN_PATH=&quot;C:\\path\\to\\llama-server.exe&quot;</span>
+<span class="p">./</span><span class="n">mc-node-windows</span><span class="p">-&lt;</span><span class="n">arch</span><span class="p">&gt;.</span><span class="n">exe</span>
+</code></pre></div>
+
+<p>Requirements:
+- MC_NODE_ID and MC_NODE_SECRET are required
+- HQ address is MC_GRPC_URL (default localhost:9090)
+- llama.cpp <code>llama-server</code> must be installed or set MC_LLAMA_SERVER_BIN_PATH</p>
+<h2 id="4-stream-responses-optional">4. Stream responses (optional)<a class="headerlink" href="#4-stream-responses-optional" title="Permanent link">&para;</a></h2>
 <p>Use <code>stream: true</code> to receive tokens as they are generated.</p>
-<h2 id="4-next-steps">4. Next steps<a class="headerlink" href="#4-next-steps" title="Permanent link">&para;</a></h2>
+<h2 id="5-next-steps">5. Next steps<a class="headerlink" href="#5-next-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Review limits and timeouts</li>
 <li>Explore model catalog &amp; BYO models</li>

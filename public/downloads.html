@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download ModelCloud Node</title>
+  <meta name="description" content="Download prebuilt binaries for the ModelCloud Node across Linux, macOS, and Windows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/" aria-label="ModelCloud Home"><img src="/assets/logo.svg" alt="ModelCloud" width="160" height="44" style="display:block;height:44px;width:auto" /></a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/docs/">Docs</a>
+        <a href="/docs/quickstart/">Quickstart</a>
+        <a class="btn btn-primary" href="https://mc.local/dashboard" aria-label="Go to Dashboard">Go to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Download</h1>
+        <p class="lead">Install the node and sign in to start earning by serving inference. Choose your platform to get started.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/docs/downloads/">Docs: Downloads</a>
+          <a class="btn btn-ghost" href="https://github.com/Model-Cloud/mc/releases">GitHub Releases</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="center">Choose your platform</h2>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="card center">
+            <h3>Linux</h3>
+            <p class="lead">x86_64 and ARM64</p>
+            <div class="cta-row" style="justify-content:center">
+              <a class="btn btn-primary" href="https://github.com/Model-Cloud/mc/releases">Download</a>
+              <a class="btn btn-ghost" href="/docs/quickstart/">Setup guide</a>
+            </div>
+          </div>
+          <div class="card center">
+            <h3>macOS</h3>
+            <p class="lead">Intel and Apple Silicon</p>
+            <div class="cta-row" style="justify-content:center">
+              <a class="btn btn-primary" href="https://github.com/Model-Cloud/mc/releases">Download</a>
+              <a class="btn btn-ghost" href="/docs/quickstart/">Setup guide</a>
+            </div>
+          </div>
+          <div class="card center">
+            <h3>Windows</h3>
+            <p class="lead">amd64 and arm64</p>
+            <div class="cta-row" style="justify-content:center">
+              <a class="btn btn-primary" href="https://github.com/Model-Cloud/mc/releases">Download</a>
+              <a class="btn btn-ghost" href="/docs/quickstart/">Setup guide</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2 class="center">Install with one command</h2>
+        <p class="lead center">Download the latest release for your OS/arch and run it.</p>
+        <div class="code-wrap" style="max-width:980px;margin:12px auto 0">
+          <button class="copy-btn" data-copy-target="#one-line-install" aria-label="Copy command">Copy</button>
+          <pre class="code"><code id="one-line-install"># Linux (amd64 example)
+curl -L https://github.com/Model-Cloud/mc/releases/latest/download/mc-node-linux-amd64.tar.gz -o mc-node-linux-amd64.tar.gz \
+  && tar -xzf mc-node-linux-amd64.tar.gz && ./mc-node-linux-amd64
+
+# macOS (arm64 example)
+curl -L https://github.com/Model-Cloud/mc/releases/latest/download/mc-node-darwin-arm64.tar.gz -o mc-node-darwin-arm64.tar.gz \
+  && tar -xzf mc-node-darwin-arm64.tar.gz && ./mc-node-darwin-arm64
+
+# Windows (PowerShell, amd64 example)
+Invoke-WebRequest https://github.com/Model-Cloud/mc/releases/latest/download/mc-node-windows-amd64.zip -OutFile mc-node-windows-amd64.zip; \
+  Expand-Archive mc-node-windows-amd64.zip; \
+  .\mc-node-windows-amd64.exe</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Manual install</h2>
+          <ol class="steps">
+            <li>Download the archive for your OS and architecture.</li>
+            <li>Extract the archive to a writable location.</li>
+            <li>Set environment variables and run the binary.</li>
+          </ol>
+        </div>
+        <div class="code-wrap">
+          <button class="copy-btn" data-copy-target="#manual-linux" aria-label="Copy command">Copy</button>
+          <pre class="code"><code id="manual-linux"># Linux/macOS
+export MC_NODE_ID="your-node-id"
+export MC_NODE_SECRET="your-node-secret"
+export MC_GRPC_URL="localhost:9090"    # optional
+export MC_MODELS_DIR="/tmp/mc-models"   # optional
+# If llama-server is not in PATH
+# export MC_LLAMA_SERVER_BIN_PATH="/path/to/llama-server"
+./mc-node-&lt;os&gt;-&lt;arch&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand">ModelCloud</div>
+      <nav class="footer-links">
+        <a href="/docs/">Docs</a>
+        <a href="/docs/blog/">Blog</a>
+        <a href="#security">Security</a>
+        <a href="#terms">Terms</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+      <div class="copy">© <span id="year"></span> ModelCloud</div>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
+
+

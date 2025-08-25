@@ -454,24 +454,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#how-to-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to run
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requirements
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -811,43 +793,12 @@
 <p>Prebuilt binaries for the Go-based ModelCloud Node. Choose the asset that matches your platform and architecture.</p>
 <h2 id="latest-release">Latest release<a class="headerlink" href="#latest-release" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Visit the Releases page and download the appropriate archive for your system:</li>
+<li>Get the latest binaries on <a href="https://github.com/Model-Cloud/mc/releases">GitHub Releases</a> and download the archive for your system:</li>
 <li>Linux: <code>mc-node-linux-amd64.tar.gz</code>, <code>mc-node-linux-arm64.tar.gz</code></li>
 <li>macOS: <code>mc-node-darwin-amd64.tar.gz</code>, <code>mc-node-darwin-arm64.tar.gz</code></li>
 <li>Windows: <code>mc-node-windows-amd64.zip</code>, <code>mc-node-windows-arm64.zip</code></li>
 </ul>
-<p>After download, extract the archive and run the binary. See Quickstart for environment variables and setup.</p>
-<h2 id="how-to-run">How to run<a class="headerlink" href="#how-to-run" title="Permanent link">&para;</a></h2>
-<p>Linux/macOS:</p>
-<div class="codehilite"><pre><span></span><code>tar<span class="w"> </span>-xzf<span class="w"> </span>mc-node-&lt;os&gt;-&lt;arch&gt;.tar.gz
-<span class="nb">export</span><span class="w"> </span><span class="nv">MC_NODE_ID</span><span class="o">=</span><span class="s2">&quot;your-node-id&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MC_NODE_SECRET</span><span class="o">=</span><span class="s2">&quot;your-node-secret&quot;</span>
-<span class="c1"># Optional overrides</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MC_GRPC_URL</span><span class="o">=</span><span class="s2">&quot;localhost:9090&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MC_MODELS_DIR</span><span class="o">=</span><span class="s2">&quot;/tmp/mc-models&quot;</span>
-<span class="c1"># If llama-server is not in PATH</span>
-<span class="c1"># export MC_LLAMA_SERVER_BIN_PATH=&quot;/path/to/llama-server&quot;</span>
-./mc-node-&lt;os&gt;-&lt;arch&gt;
-</code></pre></div>
-
-<p>Windows (PowerShell):</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">Expand-Archive</span> <span class="n">mc-node-windows</span><span class="p">-&lt;</span><span class="n">arch</span><span class="p">&gt;.</span><span class="n">zip</span>
-<span class="nv">$env:MC_NODE_ID</span><span class="p">=</span><span class="s2">&quot;your-node-id&quot;</span>
-<span class="nv">$env:MC_NODE_SECRET</span><span class="p">=</span><span class="s2">&quot;your-node-secret&quot;</span>
-<span class="nv">$env:MC_GRPC_URL</span><span class="p">=</span><span class="s2">&quot;localhost:9090&quot;</span>
-<span class="nv">$env:MC_MODELS_DIR</span><span class="p">=</span><span class="s2">&quot;C:\\mc-models&quot;</span>
-<span class="c"># If llama-server is not in PATH</span>
-<span class="c"># $env:MC_LLAMA_SERVER_BIN_PATH=&quot;C:\\path\\to\\llama-server.exe&quot;</span>
-<span class="p">./</span><span class="n">mc-node-windows</span><span class="p">-&lt;</span><span class="n">arch</span><span class="p">&gt;.</span><span class="n">exe</span>
-</code></pre></div>
-
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>MC_NODE_ID</code> and <code>MC_NODE_SECRET</code> are required.</li>
-<li>The node connects to HQ at <code>MC_GRPC_URL</code> (default <code>localhost:9090</code>).</li>
-<li>The runner uses llama.cpp's <code>llama-server</code>. Install it or set <code>MC_LLAMA_SERVER_BIN_PATH</code>.</li>
-</ul>
-<p>For more details, see Quickstart.</p>
+<p>After downloading, extract the archive and run the binary. See the <a href="../quickstart/">Quickstart</a> for step-by-step setup and environment variables.</p>
 
 
 
