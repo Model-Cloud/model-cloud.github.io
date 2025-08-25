@@ -41,6 +41,7 @@ plugins:
 nav:
   - Overview: index.md
   - Quickstart: quickstart.md
+  - Downloads: downloads.md
   - API Reference:
       - Chat Completions: api/chat-completions.md
   - Blog:
