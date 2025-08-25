@@ -9,7 +9,7 @@ Prebuilt binaries for the Go-based ModelCloud Node. Choose the asset that matche
 
 ## Latest release
 
-- Get the latest binaries on [GitHub Releases](https://github.com/Model-Cloud/mc/releases) and download the archive for your system:
+- Get the latest binaries on [GitHub Releases](https://github.com/Model-Cloud/mc-modelnode-go/releases) and download the archive for your system:
   - Linux: `mc-node-linux-amd64.tar.gz`, `mc-node-linux-arm64.tar.gz`
   - macOS: `mc-node-darwin-amd64.tar.gz`, `mc-node-darwin-arm64.tar.gz`
   - Windows: `mc-node-windows-amd64.zip`, `mc-node-windows-arm64.zip`
